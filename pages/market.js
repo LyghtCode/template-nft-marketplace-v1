@@ -2,7 +2,7 @@ import { ethers } from 'ethers';
 import { useState, useEffect } from 'react';
 import Resell from '../engine/Resell.json';
 import GDAOCollection from '../engine/GDAOCollection.json'
-import { Card, Button, Col, Row, Container, Text, Grid, Input } from '@nextui-org/react';
+import { Card, Button, Col, Row, Container, Text, Grid, Input,useTheme, } from '@nextui-org/react';
 import 'sf-font';
 import { nftresell, nftcollection, nftcreator } from '../engine/configuration';
 import { Alchemy, Network } from "alchemy-sdk";
@@ -11,6 +11,8 @@ import { useAccount, useNetwork, useSigner } from 'wagmi'
 
 
 export default function Sell(props) {
+  const { theme } = useTheme()
+
   const { address, isConnected } = useAccount()
   const { chain } = useNetwork()
   const { data: signer, isError, isLoading } = useSigner()
@@ -123,7 +125,7 @@ export default function Sell(props) {
       <Container display='flex' justify='center' alignContent='center' md="true">
         <Row display='flex' justify='center' alignContent='center'>
           <Col css={{ size: "$50", paddingLeft: "$10", paddingTop: "$1" }}>
-            <Card css={{ p: "$3", backgroundColor: "$red200", boxShadow: '0px 0px 4px #a1c245' }}>
+            <Card css={{ p: "$3", backgroundColor: "$red200", boxShadow: '0px 0px 4px #f2e900' }}>
               <Card css={{ p: "$3", marginTop: '$1', backgroundColor: "$black" }}>
                 <Row display='flex' justify='center' alignContent='center'>
                   <Button
@@ -227,7 +229,7 @@ export default function Sell(props) {
                       <h5
                         style={{
                           color: "#9D00FF",
-                          fontFamily: "SF Pro Display",
+                          fontFamily: "Space Grotesk",
                         }}
                       >
                         {nft.contract}
@@ -247,7 +249,7 @@ export default function Sell(props) {
                         }}
                         style={{
                           color: "white",
-                          fontFamily: "SF Pro Display",
+                          fontFamily: "Space Grotesk",
                           fontWeight: "bolder",
                           fontSize: "15px",
                         }}

@@ -62,7 +62,7 @@ export default function createMarket() {
   return (
     <div>
       <Spacer></Spacer>
-      <Container display='flex' justify='center' alignContent='center' lg gap={2} css={{ fontFamily: 'SF Pro Display', fontWeight: '200' }}>
+      <Container display='flex' justify='center' alignContent='center' lg gap={2} css={{ fontFamily: 'Space Grotesk', fontWeight: '300' }}>
         <Text h2>Minter Portal</Text>
         <Row gap={4}>
           <Col css={{ marginRight: '$7' }}>

@@ -99,7 +99,7 @@ export default function createMarket() {
     return (
         <div>
           <Spacer></Spacer>
-          <Container lg gap={2} css={{ fontFamily: 'SF Pro Display', fontWeight: '200' }}>
+          <Container lg gap={2} css={{ fontFamily: 'Space Grotesk', fontWeight: '300' }}>
           <Text h2>NFT Creator Portal</Text>
             <Row gap={4}>
               <Col css={{ marginRight: '$7' }}>

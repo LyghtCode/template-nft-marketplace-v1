@@ -221,7 +221,7 @@ return (
                         <h5
                           style={{
                             color: "#9D00FF",
-                            fontFamily: "SF Pro Display",
+                            fontFamily: "Space Grotesk",
                           }}
                         >
                         {nft.contract}
@@ -241,7 +241,7 @@ return (
                           }}
                           style={{
                             color: "white",
-                            fontFamily: "SF Pro Display",
+                            fontFamily: "Space Grotesk",
                             fontWeight: "bolder",
                             fontSize: "15px",
                           }}

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Button, Col, Row, Container, Text, Grid, Input } from '@nextui-org/react';
+import { Button, Col, Row, Container, Text, useTheme, Grid, Input } from '@nextui-org/react';
 import 'sf-font';
 import { Alchemy, Network } from "alchemy-sdk";
 import { toast } from 'react-toastify';
@@ -14,6 +14,8 @@ import { useAccount, useNetwork } from 'wagmi'
 
 
 export default function Sell(props) {
+  const { theme } = useTheme()
+
   const { address, isConnecting, isDisconnected, isConnected } = useAccount()
   const { chain } = useNetwork()
 
@@ -119,7 +121,8 @@ export default function Sell(props) {
             </Card>
           </Col>
         </Row>
-        <Text h4>No NFT's Found! Please Connect Wallet</Text>
+        <Text style={{
+                  color: theme.colors.secondary.value,}} h4>No NFT's Found! Please Connect Wallet</Text>
       </Container>
     );
 
@@ -127,7 +130,7 @@ export default function Sell(props) {
       <Container display='flex' justify='center' aligncontent='center' md="true">
         <Row display='flex' justify='center' aligncontent='center'>
           <Col css={{ size: "$50", paddingLeft: "$10", paddingTop: "$1" }}>
-            <Card css={{ p: "$3", backgroundColor: "$black", boxShadow: '0px 0px 4px #a1c245' }}>
+            <Card css={{ p: "$3", backgroundColor: "$black", boxShadow: '0px 0px 4px #f2e900' }}>
               <Card display='flex' justify='center' aligncontent='center' css={{ backgroundColor: "$black", p: "$3", marginTop: '$1' }}>
                 <Row display='flex' justify='center' aligncontent='center'>
                 </Row>
@@ -139,7 +142,8 @@ export default function Sell(props) {
                     css={{ marginRight: '4px' }}
 
                   >
-                    Refresh NFTs
+                    <Text style={{
+                  color: theme.colors.primaryLightContrast.value,}}>Refresh NFTs</Text>
                   </Button>
                 </Row>
               </Card>
@@ -225,7 +229,7 @@ export default function Sell(props) {
                       <h5
                         style={{
                           color: "#9D00FF",
-                          fontFamily: "SF Pro Display",
+                          fontFamily: "Space Grotesk",
                         }}
                       >
                         {nft.contract}
@@ -247,7 +251,7 @@ export default function Sell(props) {
                           }}
                           style={{
                             color: "white",
-                            fontFamily: "SF Pro Display",
+                            fontFamily: "Space Grotesk",
                             fontWeight: "bolder",
                             fontSize: "15px",
                           }}

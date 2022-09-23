@@ -167,15 +167,15 @@ export default function Home(props) {
                 <Card
                   isHoverable
                   key={id}
-                  style={{ boxShadow: "0px 0px 5px #a1c245" }}
+                  style={{ boxShadow: "0px 0px 5px #f2e900" }}
                   variant="shadow"
                 >
                   <Text
                     style={{
                       color: "white",
                       fontWeight: "bold",
-                      fontFamily: "SF Pro Display",
-                      fontWeight: "200",
+                      fontFamily: "Space Grotesk",
+                      fontWeight: "300",
                       fontSize: "20px",
                       marginLeft: "3px",
                     }}
@@ -229,8 +229,8 @@ export default function Home(props) {
                   style={{
                     color: "white",
                     fontWeight: "bold",
-                    fontFamily: "SF Pro Display",
-                    fontWeight: "200",
+                    fontFamily: "Space Grotesk",
+                    fontWeight: "300",
                     fontSize: "20px",
                     marginLeft: "3px",
                   }}

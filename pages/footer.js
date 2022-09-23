@@ -1,33 +1,35 @@
 import 'sf-font';
-import { Text, Row, Spacer, Container, Col } from '@nextui-org/react';
+import { Text, Row, Spacer, Container, Col, useTheme } from '@nextui-org/react';
+
 
 export default function Footer() {
+  const { theme } = useTheme()
   const footer1 = [
     {
       id: 1,
-      img: "discord-svgrepo-com.svg",
-      url: "https://discord.gg/sxp3QxpnTU",
+      img: "chakra.png",
+      url: "https://lyghtcode.vercel.app",
     },
     {
       id: 2,
-      img: "telegram-svgrepo-com.svg",
-      url: "https://t.me/GolfDAO",
+      img: "coqui.png",
+      url: "https://github.com/LyghtCode",
     },
     {
       id: 3,
-      img: "twitter-svgrepo-com.svg",
-      url: "https://twitter.com/GolfDAO1",
+      img: "druidd.png",
+      url: "https://twitter.com/TainoMusica",
     },
-    {
-      id: 4,
-      img: "instagram-svgrepo-com.svg",
-      url: "https://www.instagram.com/golfdao1/",
-    },
-    {
-      id: 5,
-      img: "linkedin-svgrepo-com.svg",
-      url: "https://www.linkedin.com/in/golfdao/",
-    },
+    // {
+    //   id: 4,
+    //   img: "instagram-svgrepo-com.svg",
+    //   url: "https://www.instagram.com/golfdao1/",
+    // },
+    // {
+    //   id: 5,
+    //   img: "linkedin-svgrepo-com.svg",
+    //   url: "https://www.linkedin.com/in/golfdao/",
+    // },
   ];
 
   const footer2 = [
@@ -49,8 +51,8 @@ export default function Footer() {
                   color: "#ffffff",
                   fontSmooth: "always",
                   textShadow: "-0px 0px 3px #ffffff",
-                  fontFamily: "SF Pro Display",
-                  fontWeight: "200",
+                  fontFamily: "Space Grotesk",
+                  fontWeight: "300",
                 }}>Deployed on</Text>
             <ul>
               {footer2.map((item, idx) => {
@@ -73,8 +75,8 @@ export default function Footer() {
                   color: "#ffffff",
                   fontSmooth: "always",
                   textShadow: "-0px 0px 3px #ffffff",
-                  fontFamily: "SF Pro Display",
-                  fontWeight: "200",
+                  fontFamily: "Space Grotesk",
+                  fontWeight: "300",
                 }}>Powered by</Text>
             <a href="">
               <img
@@ -91,11 +93,11 @@ export default function Footer() {
                 style={{
                   color: "#ffffff",
                   fontSmooth: "always",
-                  textShadow: "-0px 0px 3px #ffffff",
-                  fontFamily: "SF Pro Display",
-                  fontWeight: "200",
+                  textShadow: "-0px 0px 3px #f2e900",
+                  fontFamily: "Space Grotesk",
+                  fontWeight: "400",
                 }}>
-              Follow Us!
+              . . . . . . . . .
             </Text>
             <ul>
               {footer1.map((item, idx) => {
@@ -104,8 +106,8 @@ export default function Footer() {
                     <img
                       src={item.img}
                       style={{ marginRight: "1px" }}
-                      width="33px"
-                      height="33px"
+                      width="66px"
+                      height="66px"
                     ></img>
                   </a>
                 );
@@ -114,15 +116,15 @@ export default function Footer() {
           </Col>
           {/* Chigag Branding */}
           <Col>
-            <a href="https://chigag-studio.vercel.app/">
+            <a href="https://lyghtcode.vercel.app/">
               <Text
                 h3
                 style={{
-                  color: "#ffffff",
+                  color: theme.colors.primaryLightHover.value,
                   fontSmooth: "always",
                   textShadow: "-0px 0px 3px #ffffff",
-                  fontFamily: "SF Pro Display",
-                  fontWeight: "200",
+                  fontFamily: "Space Grotesk",
+                  fontWeight: "300",
                 }}
               >
                 Web3 by
@@ -130,14 +132,14 @@ export default function Footer() {
               <Text
                 h3
                 style={{
-                  color: "#ff750c",
+                  color:theme.colors.primaryLightContrast.value,
                   fontSmooth: "always",
                   textShadow: "-0px 0px 3px #ffffff",
-                  fontFamily: "SF Pro Display",
+                  fontFamily: "Space Grotesk",
                   fontWeight: "260",
                 }}
               >
-                Chi'Gag Studio
+                LyghtC0de
               </Text>
             </a>
           </Col>

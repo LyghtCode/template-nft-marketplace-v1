@@ -43,20 +43,20 @@ const wagmiClient = createClient({
 const theme = createTheme({
   type: 'dark',
   theme: {
-    fontFamily: 'SF Pro Display',
+    fontFamily: 'Space Grotesk',
     colors: {
-      primaryLight: '#a1c245',
-      primaryLightHover: '#a1c245',
-      primaryLightActive: '#a1c245',
-      primaryLightContrast: '$green600',
-      primary: '#a1c245',
-      primaryBorder: '$green500',
-      primaryBorderHover: '$green600',
+      primaryLight: '#00ff9f',
+      primaryLightHover: '#00b8ff',
+      primaryLightActive: '#d600ff',
+      primaryLightContrast: '#f2e900',
+      primary: '#00ff9f',
+      primaryBorder: '#00b8ff',
+      primaryBorderHover: '#d600ff',
       primarySolidHover: '$green700',
-      primarySolidContrast: '$white',
-      primaryShadow: '$white500',
+      primarySolidContrast: '#001eff',
+      primaryShadow: '#f2e900',
       transparent: '#00000000',
-      secondary: '$purple500',
+      secondary: '#bd00ff',
 
       gradient: 'linear-gradient(112deg, $blue100 -25%, $green500 -10%, $purple300 90%)',
       link: '#5E1DAD',
@@ -65,7 +65,9 @@ const theme = createTheme({
 
     },
     space: {},
-    fonts: {}
+    fonts: {
+      sans: 'Space Grotesk, sans-serif;'
+    }
   }
 })
 const collapseItems = [
@@ -82,7 +84,7 @@ function MyApp({ Component, pageProps }) {
     // the magic sauce
     <WagmiConfig client={wagmiClient}>
       <RainbowKitProvider coolMode theme={midnightTheme({
-        accentColor: '#a1c245',
+        accentColor: '#bd00ff',
         borderRadius: 'small',
         overlayBlur: 'small',
       })}
@@ -93,29 +95,29 @@ function MyApp({ Component, pageProps }) {
             {/* Branding */}
             <Navbar.Brand>
               <Navbar.Toggle aria-label="toggle navigation" />
-              <Image src="letrascut.png" style={{ maxWidth: '260px', marginRight: '0px' }}  ></Image>
-              {/* <Text color="inherit" hideIn="xs" size={36} css={{ fontWeight: "300", textShadow: '0px 0px 3px #a1c245' }}>
+              <Image src="chakra.png" style={{ maxWidth: '66px', marginRight: '0px' }}  ></Image>
+              {/* <Text color="inherit" hideIn="xs" size={36} css={{ fontWeight: "300", textShadow: '0px 0px 3px #f2e900' }}>
                 Clubhouse
               </Text> */}
             </Navbar.Brand>
             {/* Nav Menu */}
-            <Navbar.Content enableCursorHighlight activeColor="secondary" hideIn="xs" variant="solid-rounded">
+            <Navbar.Content enableCursorHighlight activeColor='secondary' hideIn="xs" variant="solid-rounded">
 
-              <Navbar.Link style={{ fontFamily: 'SF Pro Display', fontSize: '33px', color: '#a1c245', fontWeight: '200' }} href="/">Home</Navbar.Link>
+              <Navbar.Link style={{ fontFamily: 'Space Grotesk', fontSize: '33px', color: '#00ff9f', fontWeight: '200' }} href="/">Home</Navbar.Link>
               {/* <Navbar.Link style={{fontFamily:'SF Pro Display', fontSize:'25px', color:'white', fontWeight:'500'}} href="/create">
               Create
             </Navbar.Link> */}
-              <Navbar.Link style={{ fontFamily: 'SF Pro Display', fontSize: '33px', color: '#a1c245', fontWeight: '260' }} href="/fiat">Fiat</Navbar.Link>
-              <Navbar.Link style={{ fontFamily: 'SF Pro Display', fontSize: '33px', color: '#a1c245', fontWeight: '260' }} href="/mint">Mint</Navbar.Link>
-              <Navbar.Link style={{ fontFamily: 'SF Pro Display', fontSize: '33px', color: '#a1c245', fontWeight: '260' }} href="/market">Market</Navbar.Link>
-              <Navbar.Link style={{ fontFamily: 'SF Pro Display', fontSize: '33px', color: '#a1c245', fontWeight: '260' }} href="/gallery">Gallery</Navbar.Link>
+              <Navbar.Link style={{ fontFamily: 'Space Grotesk', fontSize: '33px', color: '#00ff9f', fontWeight: '260' }} href="/fiat">Fiat</Navbar.Link>
+              <Navbar.Link style={{ fontFamily: 'Space Grotesk', fontSize: '33px', color: '#00ff9f', fontWeight: '260' }} href="/mint">Mint</Navbar.Link>
+              <Navbar.Link style={{ fontFamily: 'Space Grotesk', fontSize: '33px', color: '#00ff9f', fontWeight: '260' }} href="/market">Market</Navbar.Link>
+              <Navbar.Link style={{ fontFamily: 'Space Grotesk', fontSize: '33px', color: '#00ff9f', fontWeight: '260' }} href="/gallery">Gallery</Navbar.Link>
             </Navbar.Content>
             {/* Mobile Menu */}
             <Navbar.Collapse>
               {collapseItems.map((item, index) => (
                 <Navbar.CollapseItem key={item}>
                   <Link
-                    color="primary"
+                    color="#f2e900"
                     css={{
                       minWidth: "100%",
                     }}
