@@ -11,7 +11,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 contract NFTMarketResell is IERC721Receiver, ReentrancyGuard, Ownable {
 
   address payable holder;
-  uint256 listingFee = 0.00025 ether;
+  uint256 listingFee = 0.001 ether;
 
   struct List {
     uint256 tokenId;

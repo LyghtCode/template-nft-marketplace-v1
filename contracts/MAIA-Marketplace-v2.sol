@@ -15,7 +15,7 @@ contract MAIAMarket is ReentrancyGuard, Ownable {
   Counters.Counter private _itemsSold;
 
   address payable holder;
-  uint256 listingFee = 0.0025 ether;
+  uint256 listingFee = 0.0075 ether;
   uint256 mintingFee = 0.0075 ether;
 
   constructor() {

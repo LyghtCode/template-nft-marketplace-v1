@@ -14,7 +14,7 @@ contract MAIANFT is ERC721URIStorage, Ownable {
     address contractAddress;
     uint256 public cost = 0.0075 ether;
 
-    constructor(address marketContract) ERC721("MAIAMarket", "MAIA") {
+    constructor(address marketContract) ERC721("MAIA NFT Collection", "MAIA") {
         contractAddress = marketContract;
     }
 

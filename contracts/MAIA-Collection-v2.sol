@@ -13,15 +13,15 @@ contract Collection is ERC721Enumerable, Ownable {
     using Strings for uint256;
     string public baseURI;
     string public baseExtension = ".json";
-    uint256 public maxSupply = 1000;
+    uint256 public maxSupply = 999;
     uint256 public maxMintAmount = 5;
     bool public paused = false;
 
-    constructor() ERC721("MAIA NFT Collection", "MAIA") {}
+    constructor() ERC721("MAIA Creat0r", "AIA") {}
 
-    //MAIA Creator NFT URI from Pinata pin
+
     function _baseURI() internal view virtual override returns (string memory) {
-    return "https://gateway.pinata.cloud/ipfs/QmVr3MuS7C6Y2yhbH1DixcAd1JSKLPxW8kmAzD2W1cg9q6";
+    return "https://gateway.pinata.cloud/ipfs/QmVr3MuS7C6Y2yhbH1DixcAd1JSKLPxW8kmAzD2W1cg9q6/";
 
     }
     
