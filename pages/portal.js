@@ -266,13 +266,4 @@ return (
   </div>
 )
 }
-export async function getServerSideProps() {
-  const res = await fetch(process.env.NEXT_PUBLIC_API_SERVER).then(
-    (response) => response.json()
-  );
-
-  return {
-    props: { res }
-  };
-}
 

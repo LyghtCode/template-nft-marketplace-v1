@@ -76,11 +76,10 @@ export default function createMarket() {
                   <video
                     autoPlay
                     loop
-                    muted
-                    poster="GOLDDAOSTILL.png"
+                    poster="ghost.gif"
                   >
                     <source
-                      src="gdao.mp4"
+                      src="untitled.mp4"
                       type="video/mp4"
                     />
                   </video>
@@ -100,7 +99,7 @@ export default function createMarket() {
                   onChange={e => updateFormInput({ ...formInput, amount: e.target.value })}
                 />
                 <Button size="sm" style={{ fontSize: '20px' }} onPress={mintNFT} css={{ marginTop: '$2', marginBottom: '$5', color: '$gradient' }}>
-                  MINT
+                  ENTER MATRIX
                 </Button>
               </Container>
             </Card>

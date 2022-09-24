@@ -30,7 +30,7 @@ const { chains, provider } = configureChains(
 );
 
 const { connectors } = getDefaultWallets({
-  appName: 'Golf DAO',
+  appName: 'LyghtC0des Marketplace',
   chains
 });
 

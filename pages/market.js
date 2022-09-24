@@ -142,7 +142,7 @@ export default function Sell(props) {
             </Card>
           </Col>
         </Row>
-        <Text h4>No GolfDAO NFT's Found on Wallet!</Text>
+        <Text h4>No NFT's Found on Wallet!</Text>
       </Container>
     );
 
@@ -224,7 +224,7 @@ export default function Sell(props) {
                     key={i}
                     value={i}
                   >
-                    <Card.Image src='gdaoHQ.gif' />
+                    <Card.Image src='whoami.jpeg' />
                     <Card.Body md="true">
                       <h5
                         style={{

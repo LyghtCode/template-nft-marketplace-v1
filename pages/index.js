@@ -185,7 +185,7 @@ export default function Home(props) {
                   <Card.Body css={{ p: 0 }}>
                     <Card.Image
                       style={{ maxWidth: "150px", borderRadius: "6%" }}
-                      src='gdaoHQ.gif'
+                      src='whoami.jpeg'
                     />
                   </Card.Body>
                   <Card.Footer css={{ justifyItems: "flex-start" }}>
