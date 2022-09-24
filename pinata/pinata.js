@@ -1,9 +1,11 @@
-//require('dotenv').config();
+import axios from axios;
+import FormData from 'form-data';
+import { toast } from 'react-toastify';
+
 const key = process.env.NEXT_PUBLIC_PINATA_KEY;
 const secret = process.env.NEXT_PUBLIC_PINATA_SECRET;
 
-const axios = require('axios');
-const FormData = require('form-data');
+//todo add better metadata and toasts
 
 export const uploadJSONToIPFS = async(JSONBody) => {
     const url = `https://api.pinata.cloud/pinning/pinJSONToIPFS`;
@@ -22,6 +24,7 @@ export const uploadJSONToIPFS = async(JSONBody) => {
            };
         })
         .catch(function (error) {
+            toast.error(error)
             console.log(error)
             return {
                 success: false,
@@ -38,10 +41,11 @@ export const uploadFileToIPFS = async(file) => {
     let data = new FormData();
     data.append('file', file);
 
+    //MAIA Creator NFT Metadata
     const metadata = JSON.stringify({
-        name: 'testname',
+        name: 'MAIA Creator',
         keyvalues: {
-            exampleKey: 'exampleValue'
+            secret: 'In Lakech Ala Kin'
         }
     });
     data.append('pinataMetadata', metadata);
@@ -74,6 +78,8 @@ export const uploadFileToIPFS = async(file) => {
             }
         })
         .then(function (response) {
+            toast.success("img @" + response.data.IpfsHash)
+
             console.log("image uploaded", response.data.IpfsHash)
             return {
                success: true,
@@ -81,6 +87,7 @@ export const uploadFileToIPFS = async(file) => {
            };
         })
         .catch(function (error) {
+            toast.error(error)
             console.log(error)
             return {
                 success: false,

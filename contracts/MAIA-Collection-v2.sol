@@ -19,9 +19,9 @@ contract Collection is ERC721Enumerable, Ownable {
 
     constructor() ERC721("MAIA NFT Collection", "MAIA") {}
 
-
+    //MAIA Creator NFT URI from Pinata pin
     function _baseURI() internal view virtual override returns (string memory) {
-    return "ipfs://QmYB5uWZqfunBq7yWnamTqoXWBAHiQoirNLmuxMzDThHhi/";
+    return "https://gateway.pinata.cloud/ipfs/QmVr3MuS7C6Y2yhbH1DixcAd1JSKLPxW8kmAzD2W1cg9q6";
 
     }
     

@@ -95,7 +95,7 @@ function MyApp({ Component, pageProps }) {
             {/* Branding */}
             <Navbar.Brand>
               <Navbar.Toggle aria-label="toggle navigation" />
-              <Image src="chakra.png" style={{ maxWidth: '66px', marginRight: '0px' }}  ></Image>
+              <Image src="chakra-maia.png" style={{ maxWidth: '66px', marginRight: '0px' }}  ></Image>
               {/* <Text color="inherit" hideIn="xs" size={36} css={{ fontWeight: "300", textShadow: '0px 0px 3px #f2e900' }}>
                 Clubhouse
               </Text> */}
