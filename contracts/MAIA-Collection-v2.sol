@@ -17,7 +17,7 @@ contract Collection is ERC721Enumerable, Ownable {
     uint256 public maxMintAmount = 5;
     bool public paused = false;
 
-    constructor() ERC721("Net2Dev NFT Collection", "N2D") {}
+    constructor() ERC721("MAIA NFT Collection", "MAIA") {}
 
 
     function _baseURI() internal view virtual override returns (string memory) {

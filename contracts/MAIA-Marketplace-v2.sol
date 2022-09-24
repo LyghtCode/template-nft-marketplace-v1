@@ -9,7 +9,7 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 
-contract n2DMarket is ReentrancyGuard, Ownable {
+contract MAIAMarket is ReentrancyGuard, Ownable {
   using Counters for Counters.Counter;
   Counters.Counter private _itemIds;
   Counters.Counter private _itemsSold;
@@ -57,7 +57,7 @@ contract n2DMarket is ReentrancyGuard, Ownable {
     IERC721(nftContract).transferFrom(msg.sender, address(this), tokenId);
     emit VaultItemCreated(itemId,nftContract,tokenId,msg.sender,address(0),price,false);}
 
-  function n2DMarketSale(
+  function MAIAMarketSale(
     address nftContract,uint256 itemId) public payable nonReentrant {
     uint price = idToVaultItem[itemId].price;
     uint tokenId = idToVaultItem[itemId].tokenId;
