@@ -1,9 +1,9 @@
 import { ethers } from 'ethers';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import GDAOCollection from '../engine/GDAOCollection.json'
+import AIACollection from '../engine/AIACollection.json'
 import { nftcollection } from '../engine/configuration';
-import { Button, Input, Col, Row, Spacer, Container, Text } from '@nextui-org/react';
+import { Button, Input, Col, Row, Spacer, Container, Text, Image, useTheme } from '@nextui-org/react';
 import 'sf-font'
 import { toast } from 'react-toastify';
 import Box from '@mui/joy/Box';
@@ -16,6 +16,7 @@ import { useSigner, useAccount, useNetwork } from 'wagmi';
 
 
 export default function createMarket() {
+  const { theme } = useTheme()
   const { address } = useAccount()
   const { chain } = useNetwork()
   const { data: signer, isError, isLoading } = useSigner()
@@ -38,7 +39,7 @@ export default function createMarket() {
       if (network === 'Polygon') {
         console.log("Preparing Mint...")
         // Alchemy Logic - LyghtCode
-        let contract = new ethers.Contract(nftcollection, GDAOCollection, signer);
+        let contract = new ethers.Contract(nftcollection, AIACollection, signer);
         let transaction = await contract.safeMint(address, tokenUri, quantity);
         await transaction.wait();
         router.push('/portal');
@@ -63,7 +64,9 @@ export default function createMarket() {
     <div>
       <Spacer></Spacer>
       <Container display='flex' justify='center' alignContent='center' lg gap={2} css={{ fontFamily: 'Space Grotesk', fontWeight: '300' }}>
-        <Text h2>Minter Portal</Text>
+        <Row justify='center'>
+          <Image src="osram.png" style={{ maxWidth: '77px', marginRight: '0px' }} />
+        </Row>
         <Row gap={4}>
           <Col css={{ marginRight: '$7' }}>
             <Spacer></Spacer>
@@ -79,7 +82,7 @@ export default function createMarket() {
                     poster="ghost.gif"
                   >
                     <source
-                      src="untitled.mp4"
+                      src="maia.mp4"
                       type="video/mp4"
                     />
                   </video>
@@ -91,16 +94,21 @@ export default function createMarket() {
             <Spacer></Spacer>
             {/* <Text h3>Mint Dashboard</Text> */}
             <Card display='flex' justify='center' style={{ maxWidth: '300px', background: '#000000', boxShadow: '0px 0px 5px #ffffff60' }}>
-              <Container css={{ marginBottom: '$2' }}>
-                <Input
-                  css={{ marginTop: '$5' }}
-                  placeholder="Set Quantity - MAX 4"
-                  aria-label="Set Quantity - MAX 4"
-                  onChange={e => updateFormInput({ ...formInput, amount: e.target.value })}
-                />
-                <Button size="sm" style={{ fontSize: '20px' }} onPress={mintNFT} css={{ marginTop: '$2', marginBottom: '$5', color: '$gradient' }}>
-                  ENTER MATRIX
-                </Button>
+              <Container justify='center' css={{ marginBottom: '$2' }}>
+                <Row justify='center' align='center'>
+                  <Input
+                    justify='center'
+                    css={{ marginTop: '$5' }}
+                    placeholder="Trust the Universe"
+                    aria-label="Set Quantity - MAX 4"
+                    onChange={e => updateFormInput({ ...formInput, amount: e.target.value })}
+                  />
+                </Row>
+                <Row justify='center'>
+                  <Button auto bordered rounded ghost animated shadow justify='center' style={{ fontSize: '20px' }} onPress={mintNFT} css={{ marginTop: '$2', marginBottom: '$5' }}>
+                    <Image src="osram.png" style={{ maxWidth: '44px', marginRight: '0px' }}  ></Image>
+                  </Button>
+                </Row>
               </Container>
             </Card>
           </Col>

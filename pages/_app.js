@@ -71,8 +71,8 @@ const theme = createTheme({
   }
 })
 const collapseItems = [
-  "Fiat",
   "Mint",
+  "Create",
   "Market",
   "Gallery",
 ];
@@ -95,7 +95,7 @@ function MyApp({ Component, pageProps }) {
             {/* Branding */}
             <Navbar.Brand>
               <Navbar.Toggle aria-label="toggle navigation" />
-              <Image src="chakra-maia.png" style={{ maxWidth: '66px', marginRight: '0px' }}  ></Image>
+              {/* <Image src="chakra.png" style={{ maxWidth: '66px', marginRight: '0px' }}  ></Image> */}
               {/* <Text color="inherit" hideIn="xs" size={36} css={{ fontWeight: "300", textShadow: '0px 0px 3px #f2e900' }}>
                 Clubhouse
               </Text> */}
@@ -103,14 +103,15 @@ function MyApp({ Component, pageProps }) {
             {/* Nav Menu */}
             <Navbar.Content enableCursorHighlight activeColor='secondary' hideIn="xs" variant="solid-rounded">
 
-              <Navbar.Link style={{ fontFamily: 'Space Grotesk', fontSize: '33px', color: '#00ff9f', fontWeight: '200' }} href="/">Home</Navbar.Link>
+              <Navbar.Link style={{ fontFamily: 'Space Grotesk', fontSize: '44px', color: '#00ff9f', fontWeight: '200' }} href="/"><Image src="chakra.png" style={{ maxWidth: '44px', marginRight: '0px' }}  ></Image></Navbar.Link>
               {/* <Navbar.Link style={{fontFamily:'SF Pro Display', fontSize:'25px', color:'white', fontWeight:'500'}} href="/create">
               Create
             </Navbar.Link> */}
-              <Navbar.Link style={{ fontFamily: 'Space Grotesk', fontSize: '33px', color: '#00ff9f', fontWeight: '260' }} href="/fiat">Fiat</Navbar.Link>
-              <Navbar.Link style={{ fontFamily: 'Space Grotesk', fontSize: '33px', color: '#00ff9f', fontWeight: '260' }} href="/mint">Mint</Navbar.Link>
-              <Navbar.Link style={{ fontFamily: 'Space Grotesk', fontSize: '33px', color: '#00ff9f', fontWeight: '260' }} href="/market">Market</Navbar.Link>
-              <Navbar.Link style={{ fontFamily: 'Space Grotesk', fontSize: '33px', color: '#00ff9f', fontWeight: '260' }} href="/gallery">Gallery</Navbar.Link>
+              {/* <Navbar.Link style={{ fontFamily: 'Space Grotesk', fontSize: '33px', color: '#00ff9f', fontWeight: '260' }} href="/fiat">Fiat</Navbar.Link> */}
+              <Navbar.Link style={{ fontFamily: 'Space Grotesk', fontSize: '44px', color: '#00ff9f', fontWeight: '260' }} href="/mint"><Image src="osram.png" style={{ maxWidth: '44px', marginRight: '0px' }}  ></Image></Navbar.Link>
+              <Navbar.Link style={{ fontFamily: 'Space Grotesk', fontSize: '44px', color: '#00ff9f', fontWeight: '260' }} href="/create"><Image src="mmere.png" style={{ maxWidth: '44px', marginRight: '0px' }}  ></Image></Navbar.Link>
+              <Navbar.Link style={{ fontFamily: 'Space Grotesk', fontSize: '44px', color: '#00ff9f', fontWeight: '260' }} href="/market"><Image src="bese.png" style={{ maxWidth: '44px', marginRight: '0px' }}  ></Image></Navbar.Link>
+              <Navbar.Link style={{ fontFamily: 'Space Grotesk', fontSize: '44px', color: '#00ff9f', fontWeight: '260' }} href="/gallery"><Image src="tree.png" style={{ maxWidth: '44px', marginRight: '0px' }}  ></Image></Navbar.Link>
             </Navbar.Content>
             {/* Mobile Menu */}
             <Navbar.Collapse>
@@ -119,7 +120,7 @@ function MyApp({ Component, pageProps }) {
                   <Link
                     color="#f2e900"
                     css={{
-                      minWidth: "100%",
+                      minWidth: "66%",
                     }}
                     href={"/" + item.toLowerCase()}
                   >

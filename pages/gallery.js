@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Button, Col, Row, Container, Text, useTheme, Grid, Input } from '@nextui-org/react';
+import { Button, Col, Row, Container, Text, useTheme, Spacer, Image, Grid, Input } from '@nextui-org/react';
 import 'sf-font';
 import { Alchemy, Network } from "alchemy-sdk";
 import { toast } from 'react-toastify';
@@ -29,11 +29,11 @@ export default function Sell(props) {
   }
 
   useEffect(() => {
-    if(isConnected){
-    getAlchemyNFTs()
-    console.log("Connected to " + chain.name)
-  }
-    
+    if (isConnected) {
+      getAlchemyNFTs()
+      console.log("Connected to " + chain.name)
+    }
+
   }, [getNfts])
 
   async function getAlchemyNFTs() {
@@ -43,7 +43,7 @@ export default function Sell(props) {
 
       // Chigag Network Logic - LyghtC0de
       let network = chain.name;
-      console.log("Connected network is: " + chain.name );
+      console.log("Connected network is: " + chain.name);
       if (network === 'Polygon') {
         console.log("Retrieving NFT's from Alchemy...")
         // Alchemy Logic - LyghtC0de
@@ -100,14 +100,19 @@ export default function Sell(props) {
 
   if (isDisconnected)
     return (
-      <Container display='flex' justify='center' aligncontent='center' md="true">
-        <Row display='flex' justify='center' aligncontent='center'>
-          <Col display='flex' justify='center' aligncontent='center' css={{ size: "$50", paddingLeft: "$10", paddingTop: "$1" }}>
-            <Card display='flex' justify='center' aligncontent='center' css={{ p: "$3", backgroundColor: "$blue200", boxShadow: '0px 0px 4px #ffffff' }}>
-              <Card display='flex' justify='center' aligncontent='center' css={{ p: "$3", marginTop: '$1' }}>
-                <Text h5 id="wallet-address" css={{ color: "#39FF14" }} />
-                <Row display='flex' justify='center' aligncontent='center'>
-                  {/* <Button
+      <div>
+        <Spacer></Spacer>
+        <Container display='flex' justify='center' aligncontent='center' md="true">
+          <Row justify='center'>
+            <Image src="tree.png" style={{ maxWidth: '77px', marginRight: '0px' }} />
+          </Row>
+          <Row display='flex' justify='center' aligncontent='center'>
+            <Col display='flex' justify='center' aligncontent='center' css={{ size: "$50", paddingLeft: "$10", paddingTop: "$1" }}>
+              <Card display='flex' justify='center' aligncontent='center' css={{ p: "$3", backgroundColor: "$blue200", boxShadow: '0px 0px 4px #ffffff' }}>
+                <Card display='flex' justify='center' aligncontent='center' css={{ p: "$3", marginTop: '$1' }}>
+                  <Text h5 id="wallet-address" css={{ color: "#39FF14" }} />
+                  <Row display='flex' justify='center' aligncontent='center'>
+                    {/* <Button
                     size="sm"
                     color="gradient"
                     onPress={getAlchemyNFTs}
@@ -116,18 +121,25 @@ export default function Sell(props) {
                   >
                     Retrieve NFTs
                   </Button> */}
-                </Row>
+                  </Row>
+                </Card>
               </Card>
-            </Card>
-          </Col>
-        </Row>
-        <Text style={{
-                  color: theme.colors.secondary.value,}} h4>No NFT's Found! Please Connect Wallet</Text>
-      </Container>
+            </Col>
+          </Row>
+          <Text style={{
+            color: theme.colors.secondary.value,
+          }} h4>No NFT's Found! Please Connect Wallet</Text>
+        </Container>
+      </div>
     );
 
   return (
+    <div>
+      <Spacer></Spacer>
       <Container display='flex' justify='center' aligncontent='center' md="true">
+        <Row justify='center'>
+          <Image src="tree.png" style={{ maxWidth: '77px', marginRight: '0px' }} />
+        </Row>
         <Row display='flex' justify='center' aligncontent='center'>
           <Col css={{ size: "$50", paddingLeft: "$10", paddingTop: "$1" }}>
             <Card css={{ p: "$3", backgroundColor: "$black", boxShadow: '0px 0px 4px #f2e900' }}>
@@ -143,7 +155,8 @@ export default function Sell(props) {
 
                   >
                     <Text style={{
-                  color: theme.colors.primaryLightContrast.value,}}>Refresh NFTs</Text>
+                      color: theme.colors.primaryLightContrast.value,
+                    }}>Refresh NFTs</Text>
                   </Button>
                 </Row>
               </Card>
@@ -152,63 +165,63 @@ export default function Sell(props) {
         </Row>
         <Row display='flex' justify='center' aligncontent='center'>
 
-            <Masonry columns={3} spacing={.3}>
-              {nfts.map((nft, i) => {
-                return (
+          <Masonry columns={3} spacing={.3}>
+            {nfts.map((nft, i) => {
+              return (
 
-                  <div key={i}>
+                <div key={i}>
 
 
-                    {nft.img.split('.').pop() === 'mp4' ?
-                      <Card key={i}
-                        value={i} sx={{ minHeight: 226, flexGrow: 1 }}>
-                        <CardCover>
-                          <video
-                            autoPlay
-                            loop
-                            muted
-                            poster="alchemyblue.png"
-                          >
-                            <source
-                              src={nft.img}
-                              type="video/mp4"
-                            />
-                          </video>
-                        </CardCover>
-                        <CardContent sx={{ justifyContent: 'center', gap: 0 }}>
-                        <Typography
-                            fontWeight="xsm"
-                            textColor="#7828C8"
-                            level="h6"
-                            mt={{ xs: 12, sm: 18 }}
-                          >
-                            {/* {nft.contract} */}
-                          </Typography>
-                        </CardContent>
-                      </Card>
-
-                      :
-                      <Card key={i}
-                        value={i} sx={{ flexGrow: 1 }}>
-                        <CardOverflow>
-                          <img
+                  {nft.img.split('.').pop() === 'mp4' ?
+                    <Card key={i}
+                      value={i} sx={{ minHeight: 226, flexGrow: 1 }}>
+                      <CardCover>
+                        <video
+                          autoPlay
+                          loop
+                          muted
+                          poster="alchemyblue.png"
+                        >
+                          <source
                             src={nft.img}
-                            srcSet={nft.img}
-                            alt={nft.contract}
+                            type="video/mp4"
                           />
-                          {/* <Typography
+                        </video>
+                      </CardCover>
+                      <CardContent sx={{ justifyContent: 'center', gap: 0 }}>
+                        <Typography
+                          fontWeight="xsm"
+                          textColor="#7828C8"
+                          level="h6"
+                          mt={{ xs: 12, sm: 18 }}
+                        >
+                          {/* {nft.contract} */}
+                        </Typography>
+                      </CardContent>
+                    </Card>
+
+                    :
+                    <Card key={i}
+                      value={i} sx={{ flexGrow: 1 }}>
+                      <CardOverflow>
+                        <img
+                          src={nft.img}
+                          srcSet={nft.img}
+                          alt={nft.contract}
+                        />
+                        {/* <Typography
                             fontWeight="xsm"
                             textColor="#7828C8"
                           >
                             {nft.contract}
                           </Typography> */}
-                        </CardOverflow>
-                      </Card>
-                    }
+                      </CardOverflow>
+                    </Card>
+                  }
 
 
 
-                    {/* <Typography
+                  {/* <Typography
                           level="h6"
                           fontWeight="lg"
                           textColor="#"
@@ -217,7 +230,7 @@ export default function Sell(props) {
                           {nft.contract}
                         </Typography> */}
 
-                    {/* <Card
+                  {/* <Card
                     isHoverable
                     css={{ mw: "240px", marginRight: "$1" }}
                     variant="bordered"
@@ -237,10 +250,10 @@ export default function Sell(props) {
                       <Text h6>
                         {nft.nftName}
                       </Text> */}
-                    {/* Chigag Description is too long for some NFTs */}
-                    {/* <Text css={{fontSize:'$sm'}}>{nft.desc}</Text> */}
-                    {/* Chigag Hide Resell Price Input for viewer */}
-                    {/* <Input
+                  {/* Chigag Description is too long for some NFTs */}
+                  {/* <Text css={{fontSize:'$sm'}}>{nft.desc}</Text> */}
+                  {/* Chigag Hide Resell Price Input for viewer */}
+                  {/* <Input
                           size="sm"
 
                           css={{
@@ -264,14 +277,16 @@ export default function Sell(props) {
                             })
                           }
                         /> */}
-                    {/* </Card.Body>
+                  {/* </Card.Body>
                   </Card> */}
-                  </div>
-                );
-              })}
-            </Masonry>
+                </div>
+              );
+            })}
+          </Masonry>
         </Row>
       </Container>
+    </div>
+
   )
 }
 

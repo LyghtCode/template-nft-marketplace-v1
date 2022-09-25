@@ -7,7 +7,7 @@ export default function Footer() {
   const footer1 = [
     {
       id: 1,
-      img: "chakra-maia.png",
+      img: "chakra.png",
       url: "https://lyghtcode.vercel.app",
     },
     {
@@ -17,7 +17,7 @@ export default function Footer() {
     },
     {
       id: 3,
-      img: "druidd.png",
+      img: "dragon.png",
       url: "https://twitter.com/TainoMusica",
     },
     // {
@@ -32,12 +32,6 @@ export default function Footer() {
     // },
   ];
 
-  const footer2 = [
-    {
-      id: 1,
-      img: "polygon-matic-logo.png",
-    },
-  ];
 
   return (
     <div>
@@ -97,7 +91,7 @@ export default function Footer() {
                   fontFamily: "Space Grotesk",
                   fontWeight: "400",
                 }}>
-              . . . . . . . . .
+              
             </Text>
             <ul>
               {footer1.map((item, idx) => {

@@ -2,7 +2,7 @@ import { ethers } from 'ethers';
 import { useState, useEffect } from 'react';
 import Web3Modal from "web3modal";
 import Resell from '../engine/Resell.json';
-import GDAOCollection from '../engine/GDAOCollection.json'
+import GDAOCollection from '../engine/AIACollection.json'
 import { Card, Button, Col, Row, Container, Text, Grid, Input } from '@nextui-org/react';
 import 'sf-font';
 import Web3 from 'web3';

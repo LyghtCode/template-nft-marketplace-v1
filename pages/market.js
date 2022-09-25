@@ -1,8 +1,8 @@
 import { ethers } from 'ethers';
 import { useState, useEffect } from 'react';
 import Resell from '../engine/Resell.json';
-import GDAOCollection from '../engine/GDAOCollection.json'
-import { Card, Button, Col, Row, Container, Text, Grid, Input,useTheme, } from '@nextui-org/react';
+import MAIA from '../engine/MAIA.json'
+import { Card, Button, Col, Row, Container, Text, Grid, Input, useTheme, Spacer, Image } from '@nextui-org/react';
 import 'sf-font';
 import { nftresell, nftcollection, nftcreator } from '../engine/configuration';
 import { Alchemy, Network } from "alchemy-sdk";
@@ -31,7 +31,7 @@ export default function Sell(props) {
       getAlchemyNFTs()
       console.log("Connected to " + chain.name)
     }
-    
+
   }, [getNfts])
 
   async function getAlchemyNFTs() {
@@ -122,32 +122,44 @@ export default function Sell(props) {
 
   if (loaded === "loaded" && !nfts.length)
     return (
-      <Container display='flex' justify='center' alignContent='center' md="true">
-        <Row display='flex' justify='center' alignContent='center'>
-          <Col css={{ size: "$50", paddingLeft: "$10", paddingTop: "$1" }}>
-            <Card css={{ p: "$3", backgroundColor: "$red200", boxShadow: '0px 0px 4px #f2e900' }}>
-              <Card css={{ p: "$3", marginTop: '$1', backgroundColor: "$black" }}>
-                <Row display='flex' justify='center' alignContent='center'>
-                  <Button
-                    size="sm"
-                    color="gradient"
-                    onPress={getAlchemyNFTs}
-                    css={{ marginRight: '4px' }}
+      <div>
+        <Spacer></Spacer>
+        <Container display='flex' justify='center' alignContent='center' md="true">
 
-                  >
-                    Refresh NFTs
-                  </Button>
-                </Row>
+          <Row justify='center'>
+            <Image src="bese.png" style={{ maxWidth: '77px', marginRight: '0px' }} />
+          </Row>
+          <Row display='flex' justify='center' alignContent='center'>
+            <Col css={{ size: "$50", paddingLeft: "$10", paddingTop: "$1" }}>
+              <Card css={{ p: "$3", backgroundColor: "$red200", boxShadow: '0px 0px 4px #f2e900' }}>
+                <Card css={{ p: "$3", marginTop: '$1', backgroundColor: "$black" }}>
+                  <Row display='flex' justify='center' alignContent='center'>
+                    <Button
+                      size="sm"
+                      color="gradient"
+                      onPress={getAlchemyNFTs}
+                      css={{ marginRight: '4px' }}
+
+                    >
+                      Refresh NFTs
+                    </Button>
+                  </Row>
+                </Card>
               </Card>
-            </Card>
-          </Col>
-        </Row>
-        <Text h4>No NFT's Found on Wallet!</Text>
-      </Container>
+            </Col>
+          </Row>
+          <Text h4>No NFT's Found on Wallet!</Text>
+        </Container>
+      </div>
     );
 
   return (
+    <div>
+      <Spacer></Spacer>
       <Container display='flex' justify='center' alignContent='center' md="true">
+        <Row justify='center'>
+          <Image src="bese.png" style={{ maxWidth: '77px', marginRight: '0px' }} />
+        </Row>
         <Row display='flex' justify='center' alignContent='center'>
           <Col css={{ size: "$50", paddingLeft: "$10", paddingTop: "$1" }}>
             <Card css={{ p: "$3", backgroundColor: "$black", boxShadow: '0px 0px 4px #ffffff' }}>
@@ -188,7 +200,7 @@ export default function Sell(props) {
                 );
                 const contractnft = new ethers.Contract(
                   nftcollection,
-                  GDAOCollection,
+                  MAIA,
                   signer
                 )
                 const checkapproved = await contractnft.isApprovedForAll(address, nftresell)
@@ -271,6 +283,7 @@ export default function Sell(props) {
           </Grid.Container>
         </Row>
       </Container>
+    </div>
   )
 }
 

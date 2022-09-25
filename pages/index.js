@@ -2,10 +2,10 @@ import { ethers } from 'ethers';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Resell from '../engine/Resell.json';
-import NFT from '../engine/NFT.json';
+import MAIA from '../engine/MAIA.json';
 import Market from '../engine/Market.json';
 import axios from 'axios';
-import { Grid, Card, Text, Button, Row, Container } from '@nextui-org/react';
+import { Grid, Card, Text, Button, Row, Container, Spacer, Image } from '@nextui-org/react';
 import { nftcreator, marketcontract, nftresell } from '../engine/configuration';
 import { Alchemy, Network } from "alchemy-sdk";
 import confetti from 'canvas-confetti';
@@ -19,7 +19,7 @@ import { useAccount, useNetwork, useSigner } from 'wagmi'
 export default function Home(props) {
   const [resellnft, getResellNfts] = useState([])
   const [marketnft, getMarketNfts] = useState([])
-  const rpc = 'https://polygon-mainnet.infura.io/v3/' + process.env.NEXT_PUBLIC_INFURA_KEY;
+
   // wagmi logic on load - LyghtC0de
   const { address, isConnected } = useAccount()
   const { chain } = useNetwork()
@@ -95,7 +95,7 @@ export default function Home(props) {
     const alchemy = new Alchemy(alchemysettings)
     const provider = await alchemy.config.getProvider()
     const wallet = new ethers.Wallet(process.env.NEXT_APP_RESELL_CONTRACT_OWNER_KEY, provider)
-    const tokenContract = new ethers.Contract(nftcreator, NFT, wallet)
+    const tokenContract = new ethers.Contract(nftcreator, MAIA, wallet)
     const marketContract = new ethers.Contract(marketcontract, Market, wallet)
     const data = await marketContract.getAvailableNft()
     const items = await Promise.all(data.map(async i => {
@@ -129,14 +129,14 @@ export default function Home(props) {
 
   return (
     <div>
-      <div>
-        <Container display='flex' justify='center' alignContent='center' xs css={{ marginBottom: "$3" }}>
-          <Text display='flex' justify='center' css={{ marginLeft: "$40", justifyContent: "" }} h2>
-            Latest NFTs
-          </Text>
-        </Container>
-        {/* </Container> */}
-      </div>
+      <Spacer></Spacer>
+      <Container display='flex' justify='center' alignContent='center' xs css={{ marginBottom: "$3" }}>
+        <Row justify='center'>
+          <Image src="chakra.png" style={{ maxWidth: '77px', marginRight: '0px' }} />
+        </Row>
+      </Container>
+      {/* </Container> */}
+
       <Container display='flex' justify='center' alignContent='center' sm="true">
         <Grid.Container display='flex' justify='center' alignContent='center' gap={1}>
           {resellnft.slice(0, 9).map((nft, id) => {
